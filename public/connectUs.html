@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* *{
+           margin: 0;
+           padding: 0;
+       } */
+        .myTell p span{
+           font-size:14px;
+           font-weight: 600; 
+        }
+        form{
+            margin-left:15%; 
+        }
+        form input{
+           border:0;
+           background:none;
+           border-bottom: 2px solid #333;
+           height:30px;
+           width:225px;
+           font-size:12px;
+           padding-left:6px;
+        }
+            input::-webkit-input-placeholder {
+            color: #b1babf;
+            opacity: 1;
+        }
+        textarea{
+            border:0;
+            border-bottom:1.2px solid #000;
+            border-top:1.2px solid #000;
+        }
+        textarea::-webkit-input-placeholder {
+            color: #b1babf;
+            opacity: 1;
+            padding:5px;
+        }
+        select{
+            border:1px solid #fff;
+            height:30px;
+           font-size:12px;
+           padding-left:4px;
+           width:230px;
+          color:red;
+           border-bottom: 1.2px solid #000;
+        }
+        #submit{
+            width:90px;
+            height:35px;
+            background: #0aa1ed;
+            border-radius: 8px;
+        }
+        .active{
+           display: none;
+        }
+        /* select .myActive{
+            color: #b1babf !important;
+            opacity: 1;
+        } */
+        .vali_info{/* 页面初始，验证消息不显示 */
+	display:none;
+    font-size:12px;
+    color:red;
+}
+.txt_focus{/*当文本框获得焦点时穿上*/
+	border-top:2px solid black;
+	border-left:2px solid black;
+}/*当文本框失去焦点时脱下*/
+
+.vali_success,.vali_fail{
+	background-repeat:no-repeat;
+  background-position:left center;
+	display:block;
+}
+/* 验证消息：验证通过时的样式 */
+.vali_success{
+    background-image:url("../images/ok.png");
+	padding-left:20px;
+	width:0px;height:20px;
+	overflow:hidden;
+}
+/* 验证消息：验证失败时的样式 */
+.vali_fail{
+    background-image:url("../images/err.png");
+    border:1px solid red;
+    background-color:#ddd;
+    color:Red;
+    padding-left:30px;
+}
+    </style>
+</head>
+<body>
+    <div class="myTell">
+       <p><span>Tel:0081-48-711-5919</span></p>
+       <p><span>Fax:0081-48-711-5920</span></p> 
+    </div>
+    <span><img src="" alt="">info@henan.jp</span>
+    <form method="post" enctype="multipart/form-data">
+       <input type="text" name="uname" placeholder="姓名" id="a1"><div class="vali_info">10个字符以内的字母、数字或下划线的组合</div><br>
+       <select name="items" class="category">
+           <option class="active">请选择</option>
+           <option>日本河南总商会</option>
+           <option>日本河南同乡会</option>
+           <option>其他</option>
+       </select><br>
+       <input type="text" name="email" placeholder="电子邮箱"  id="a2"><span class="vali_info">请输入正确的格式</span><br>
+       <input type="text" name="phone" placeholder="电话号码"  id="a3"><span class="vali_info">请输入正确的电话号码</span><br>
+       <input type="text" name="title" placeholder="标题" style="border-bottom:0;"  id="a4"><span class="vali_info">请输入正确的格式</span><br> 
+      <textarea name="content" cols="30" rows="6" placeholder="具体内容"  id="a5"></textarea><span class="vali_info">请输入正确内容</span><br>
+      
+       <input id="submit" type="button" value="提交" name="submit">
+    </form>
+<script src="js/connectUs.js"></script>
+</body>
+</html>
